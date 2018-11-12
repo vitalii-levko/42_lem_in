@@ -1,0 +1,53 @@
+
+LEM-IN(1)			General Manual			LEM-IN(1)
+
+/*NAME*/
+	/*lem-in*/ -- an ant farm manager
+
+/*SYNOPSIS*/
+	/*./lem-in*/ [/*-e*/ | /*-d*/ | /*-s*/ | /*--help*/] [/*< map_source_file*/]
+
+/*DESCRIPTION*/
+	The /*lem-in*/ utility finds the quickest way to get the given number
+	of ants across the farm. It uses either given map source file or
+	the standard input.
+
+	The options are as follows:
+
+	/*-e*/	Set the program in the expert mode. All errors will be
+		shown with the additional details.
+
+	/*-d*/	Set the program in the developer mode. Each error will
+		be followed with the specific line number and received
+		value that triggered an exception.
+
+	/*-s*/	Set the program in the system mode. Program standard
+		output will be logged in the 'Lem-in.log' file, and user
+		will see only either 'OK' if program successed or 'KO'
+		if it failed. The user must have write permission in the
+		current directory.
+
+	/*--help*/	Display the general manual page.
+
+	Source input should contain at least next elements in the
+	correspondent order: number of ants, '##start' and '##end'
+	commands each one followed by appropriate room, two rooms
+	containing room's name and two coordinates separated by space,
+	one link that connects two rooms by their names using '-' as a
+	delimiter. Each element should be placed on it's own line. Also
+	there are may be comments starting with '#' and placed anywhere
+	in the input. For example:
+
+	#This is a source input example
+	1
+	##start
+	0 1 0
+	##end
+	1 0 1
+	0-1
+
+/*DIAGNOSTICS*/
+	The /*lem-in*/ utility exits 0 on success, and >0 if error occurs.
+
+UNIT Factory			July 15, 2018		     UNIT Factory
+/^(END)^/
